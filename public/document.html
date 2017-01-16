@@ -1,0 +1,64 @@
+<div class = "row">
+  <div class="col-md-6">
+    <h2>
+      {{ document.firstName }} {{ document.lastName }} {{ document.ref }}
+    </h2>
+    <div class="container">
+      <h2>Details</h2>
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td>Date of birth</td>
+            <td>{{ document.dob }}</td>
+          </tr>
+          <tr>
+            <td>Postcode</td>
+            <td>{{ document.address.postcode }}</td>
+          </tr>
+          <tr>
+            <td>Start date</td>
+            <td>{{ document.startdate }}</td>
+          </tr>
+          <tr>
+            <td>End date</td>
+            <td>{{ document.enddate }}</td>
+          </tr>
+          <tr>
+            <td>National Insurance No.</td>
+            <td>{{ document.nino }}</td>
+          </tr>
+          <tr>
+            <td>NHS No.</td>
+            <td>{{ document.nhsno }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-2">
+    <a href="#/"><button style="margin-top:20px" class="btn btn-default" ng-click="deleteDocument(document._id)">Delete</button></a>
+  </div>
+  <div class="col-md-1">
+  </div>
+
+</div>
+<div ng-hide="editMode" class="container">
+  <div>
+    <p ng-if="ref">eMED3 Ref: {{ document.ref }} </p>
+    <p ng-if="startdate">Start date: {{ document.startdate }} </p>
+    <p ng-if="enddate">End date: {{ document.enddate }} </p>
+    <p ng-if="nino">National Insurance Number: {{ document.nino }} </p>
+    <p ng-if="nhsno">NHS Number: {{ document.nhsno }} </p>
+    <p ng-if="address.lineone">Address: {{ document.address.lineone }} </p>
+    <p ng-if="address.lineone">Address: {{ document.address.linetwo }} </p>
+    <p ng-if="address.city">City: {{ document.address.city }} </p>
+     <p>
+      <button style="margin-top:20px" class="btn btn-default" ng-click="toggleEdit()">Edit</button>
+      <a style="margin-top:20px" class="btn btn-default" href="#/">Back</a>
+    </p>
+  </div>
+</div>
+<!-- Document form -->
+<div ng-include="documentFormUrl">
+</div>
