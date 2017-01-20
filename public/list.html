@@ -17,7 +17,7 @@
     <tbody>
       <tr ng-repeat="document in documents | orderBy:'lastName'" style="cursor:pointer">
         <td>
-          <a ng-href="#/document/{{document._id}}">{{ document.firstName }} {{ document.lastName }} {{document.ref}}</a>
+          <a ng-href="#/document/{{document._id}}">{{ document.firstName }} {{ document.lastName }} {{document.uniqueId}}</a>
         </td>
       </tr>
     </tbody>
