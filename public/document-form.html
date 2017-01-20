@@ -11,23 +11,31 @@
     </p>
     <p>
       <label>Last Name (required)</label>
-      <input id="name" class="form-control" type="text" ng-model="document.lastName" required>
+      <input id="name" class="form-control" type="text" ng-model="document.SecondName" required>
     </p>
     <p>
-      <label>Date of Birth (required)</label>
-      <input id="name" class="form-control" type="text" ng-model="document.dob" required>
+      <label>Date of Birth</label>
+      <input id="name" class="form-control" type="text" ng-model="document.dob">
     </p>
     <p>
       <label>eMED3 Ref (required)</label>
-      <input id="name" class="form-control" type="text" ng-model="document.ref" required>
+      <input id="name" class="form-control" type="text" ng-model="document.uniqueId" required>
+    </p>
+    <p>
+      <label>Assessment Date (required)</label>
+      <input id="name" class="form-control" type="text" ng-model="document.assessmentDate" required>
     </p>
     <p>
       <label>Start Date (required)</label>
-      <input id="name" class="form-control" type="text" ng-model="document.startdate" required>
+      <input id="name" class="form-control" type="text" ng-model="document.validPeriodStartDate" required>
     </p>
     <p>
       <label>End Date (required)</label>
-      <input id="name" class="form-control" type="text" ng-model="document.enddate" required>
+      <input id="name" class="form-control" type="text" ng-model="document.validPeriodEndDate" required>
+    </p>
+    <p>
+      <label>Diagnosis (required)</label>
+      <input id="name" class="form-control" type="text" ng-model="document.diagPrintedText" required>
     </p>
     <p>
       <label>National Insurance Number</label>
@@ -39,19 +47,11 @@
     </p>
     <p>
       <label>Address Line One</label>
-      <input id="name" class="form-control" type="text" ng-model="document.address.lineone">
-    </p>
-    <p>
-      <label>Address Line Two</label>
-      <input id="name" class="form-control" type="text" ng-model="document.address.linetwo">
-    </p>
-    <p>
-      <label>City</label>
-      <input id="name" class="form-control" type="text" ng-model="document.address.city">
+      <input id="name" class="form-control" type="text" ng-model="document.address1">
     </p>
     <p>
       <label>Postcode</label>
-      <input id="name" class="form-control" type="text" ng-model="document.address.postcode">
+      <input id="name" class="form-control" type="text" ng-model="document.postcode">
     </p>
     <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="saveDocument(document)">Save</button>

@@ -1,7 +1,7 @@
 <div class = "row">
   <div class="col-md-6">
     <h2>
-      {{ document.firstName }} {{ document.lastName }} {{ document.ref }}
+      {{ document.firstName }} {{ document.secondName }} {{ document.uniqueId }}
     </h2>
     <div class="container">
       <h2>Details</h2>
@@ -13,16 +13,24 @@
           </tr>
           <tr>
             <td>Postcode</td>
-            <td>{{ document.address.postcode }}</td>
+            <td>{{ document.postcode }}</td>
+          </tr>
+          <tr>
+            <td>Assessment Date</td>
+            <td>{{ document.assessmentDate }}</td>
           </tr>
           <tr>
             <td>Start date</td>
-            <td>{{ document.startdate }}</td>
+            <td>{{ document.validPeriodStartDate }}</td>
+          </tr>
+            <td>End date</td>
+            <td>{{ document.validPeriodEndDate }}</td>
           </tr>
           <tr>
-            <td>End date</td>
-            <td>{{ document.enddate }}</td>
+            <td>Diagnosis</td>
+            <td>{{ document.diagPrintedText }}</td>
           </tr>
+          <tr>
           <tr>
             <td>National Insurance No.</td>
             <td>{{ document.nino }}</td>
@@ -45,14 +53,14 @@
 </div>
 <div ng-hide="editMode" class="container">
   <div>
-    <p ng-if="ref">eMED3 Ref: {{ document.ref }} </p>
-    <p ng-if="startdate">Start date: {{ document.startdate }} </p>
-    <p ng-if="enddate">End date: {{ document.enddate }} </p>
+    <p ng-if="ref">eMED3 Ref: {{ document.uniqueId }} </p>
+    <p ng-if="ref">Assessment Date: {{ document.assessmentDate }} </p>
+    <p ng-if="startdate">Start date: {{ document.validPeriodStartDate }} </p>
+    <p ng-if="enddate">End date: {{ document.validPeriodEndDate }} </p>
     <p ng-if="nino">National Insurance Number: {{ document.nino }} </p>
     <p ng-if="nhsno">NHS Number: {{ document.nhsno }} </p>
-    <p ng-if="address.lineone">Address: {{ document.address.lineone }} </p>
-    <p ng-if="address.lineone">Address: {{ document.address.linetwo }} </p>
-    <p ng-if="address.city">City: {{ document.address.city }} </p>
+    <p ng-if="address.lineone">Address: {{ document.address1 }} </p>
+    <p ng-if="address.city">City: {{ document.postcode }} </p>
      <p>
       <button style="margin-top:20px" class="btn btn-default" ng-click="toggleEdit()">Edit</button>
       <a style="margin-top:20px" class="btn btn-default" href="#/">Back</a>
