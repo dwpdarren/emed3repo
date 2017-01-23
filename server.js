@@ -57,6 +57,7 @@ app.get("/documents", function(req, res) {
 app.post("/documents", function(req, res) {
   var newDocument = req.body;
   newDocument.createDate = new Date();
+  newDocument.submitMethod = "api";
 
   if (!(req.body.firstName || req.body.lastName)) {
     handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
